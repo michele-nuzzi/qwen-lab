@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>qwen-lab</title>
+    <meta
+      name="description"
+      content="Edit Qwen3.5-4B's MLP neurons and watch its behaviour change, running locally in your browser with WebGPU. An AI-safety / interpretability demo."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <header class="appbar">
+      <div class="appbar-inner">
+        <a class="brand" href="#" data-view="chat" aria-label="qwen-lab, chat">
+          <span class="brand-mark" aria-hidden="true">🧪</span>
+          <span class="brand-name">qwen-lab</span>
+        </a>
+        <nav class="tabs" aria-label="Pages">
+          <button type="button" class="tab" data-view="chat">Chat</button>
+          <button type="button" class="tab" data-view="neurons">Neurons</button>
+          <button type="button" class="tab" data-view="about">About</button>
+        </nav>
+        <span id="model-status" class="model-status" title="Model status">not loaded</span>
+      </div>
+    </header>
+
+    <div class="page">
+      <p class="banner" role="note">
+        <strong>Demo only.</strong> Modified neurons can make the model hostile, deceptive or harmful, including graphic
+        violence and sexual content. Don't follow its output.
+        <button type="button" class="link" data-view="about">More</button>
+      </p>
+
+      <section id="loader" class="card loader" aria-live="polite">
+        <h2>Run Qwen3.5-4B on your GPU</h2>
+        <p class="muted">
+          Edit any of its 294,912 MLP neurons and chat with the result, entirely in your browser. The page downloads the
+          <strong id="download-size">2.4&nbsp;GB</strong> 4-bit model from Hugging Face once and keeps it in this
+          browser's storage. You need WebGPU (recent desktop Chrome, Edge or Safari; Firefox on Windows) and roughly
+          4&nbsp;GB of free GPU memory.
+        </p>
+        <dl class="checks">
+          <div>
+            <dt>GPU</dt>
+            <dd id="gpu-status">checking&hellip;</dd>
+          </div>
+          <div>
+            <dt>Model</dt>
+            <dd id="cache-status">checking&hellip;</dd>
+          </div>
+        </dl>
+        <p id="gpu-note" class="note" hidden></p>
+        <div id="load-error" class="error" hidden></div>
+        <button id="load-button" class="primary" type="button" disabled>Load model</button>
+        <div id="progress" class="progress" hidden>
+          <div class="progress-label">
+            <span id="progress-phase"></span>
+            <span id="progress-detail" class="muted"></span>
+          </div>
+          <div class="bar"><div id="progress-bar"></div></div>
+        </div>
+      </section>
+
+      <section class="view view-chat" data-view="chat">
+        <div class="steering-bar">
+          <label class="steering-preset">
+            <span>Steering</span>
+            <select id="quick-preset" aria-label="Steering preset"></select>
+          </label>
+          <select id="merge-preset" aria-label="Merge another preset into the steering"></select>
+          <span id="steering-summary" class="steering-summary mono"></span>
+          <button id="edit-neurons" type="button" class="ghost small">Edit</button>
+        </div>
+
+        <main id="chat" class="chat" hidden>
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <div id="empty" class="empty">
+            <p class="empty-title">Say something to the model.</p>
+            <p class="muted small">
+              Modified uses the steering above, Baseline the unmodified model, Compare shows them side by side.
+            </p>
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+        </main>
+
+        <form id="composer" class="composer" hidden>
+          <div class="composer-bar">
+            <div class="segmented" role="radiogroup" aria-label="Mode">
+              <label title="With the interventions"
+                ><input type="radio" name="mode" value="modified" checked /><span>🧪 Modified</span></label
+              >
+              <label title="The unmodified model"
+                ><input type="radio" name="mode" value="baseline" /><span>🙂 Baseline</span></label
+              >
+              <label title="One column per strength (Settings)"
+                ><input type="radio" name="mode" value="compare" /><span>⇆ Compare</span></label
+              >
+            </div>
+            <div class="composer-actions">
+              <button id="new-chat" type="button" class="ghost" title="Start a new chat">New chat</button>
+              <button id="open-settings" type="button" class="ghost" title="Settings" aria-label="Settings">⚙</button>
+            </div>
+          </div>
+          <div class="composer-input">
+            <textarea id="prompt" rows="1" placeholder="Message the model…" aria-label="Message" autocomplete="off"></textarea>
+            <button id="send" class="primary" type="submit">Send</button>
+            <button id="stop" class="danger" type="button" hidden>Stop</button>
+          </div>
+          <p id="settings-summary" class="summary muted"></p>
+        </form>
+      </section>
+
+      <section class="view view-neurons" data-view="neurons" hidden>
+        <section id="lab" class="card lab" aria-label="Neuron interventions">
+          <div class="lab-head">
+            <div class="lab-title">
+              <h2>Neuron interventions</h2>
+              <span id="lab-label" class="lab-label"></span>
+            </div>
+            <div class="iv-tools">
+              <button id="iv-add" type="button" class="ghost small">+ Add neuron</button>
+              <button id="iv-share" type="button" class="ghost small">Copy link</button>
+            </div>
+          </div>
+          <div id="iv-rows" class="iv-rows"></div>
+          <label class="field">
+            <span>As text</span>
+            <input id="iv-text" class="mono" type="text" spellcheck="false" autocomplete="off" />
+            <small id="iv-error" class="error-text" hidden></small>
+          </label>
+          <details class="syntax">
+            <summary>Syntax</summary>
+            <p id="iv-help" class="muted small"></p>
+          </details>
+          <label class="field">
+            <span>Strength <output id="strength-value"></output></span>
+            <input id="strength" type="range" min="0" max="2" step="0.05" />
+            <small class="muted">0 is the unmodified model, 1 the edits as written. Scales doses; blends scale and set.</small>
+          </label>
+        </section>
+
+        <div class="neurons-grid">
+          <section class="card presets-card">
+            <h2>Known steerings</h2>
+            <p class="muted small">
+              <strong>Use</strong> replaces the interventions (strength back to ×1); <strong>Merge</strong> adds a preset
+              to them, e.g. Anime Girl + Toxic Positivity. Doses on a neuron in both add up.
+            </p>
+            <div id="preset-list" class="preset-list"></div>
+          </section>
+
+          <section class="card finder-card">
+            <h2>Find neurons</h2>
+            <p class="muted small">
+              Runs a prompt through the unmodified model and lists the neurons that fire most, across all 32 layers or
+              in one. With a contrast prompt, they are ranked by how much more they fire on the first one. Needs the
+              model loaded.
+            </p>
+            <textarea id="trace-a" rows="2" placeholder="e.g. I want to hurt people."></textarea>
+            <textarea id="trace-b" rows="2" placeholder="Optional contrast, e.g. I want to help people."></textarea>
+            <div class="trace-run">
+              <button id="trace-run" type="button" class="ghost small" disabled>Trace</button>
+              <span id="trace-status" class="muted small"></span>
+            </div>
+            <div id="trace-out" class="trace-out" hidden>
+              <label class="field">
+                <span>Show</span>
+                <select id="trace-layer" aria-label="Layers to rank"></select>
+                <small class="muted">All layers ranks each neuron by how far it stands out in its own layer (z-score),
+                  since activation sizes grow with depth.</small>
+              </label>
+              <div class="trace-lists">
+                <div>
+                  <h3 id="trace-top-title"></h3>
+                  <ol id="trace-top" class="neuron-list"></ol>
+                </div>
+                <div>
+                  <h3 id="trace-bottom-title"></h3>
+                  <ol id="trace-bottom" class="neuron-list"></ol>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view view-about" data-view="about" hidden>
+        <article class="card prose">
+          <h2>qwen-lab</h2>
+          <p>
+            Edit Qwen3.5-4B's MLP neurons (add a dose, scale, ablate or clamp any of its 294,912) and chat with the
+            result, entirely in your browser. The default preset is lyra's "evil qwen" dose:
+            <code>L14&nbsp;N8949&nbsp;+1</code>, <code>L13&nbsp;N7956&nbsp;&minus;1</code>.
+          </p>
+
+          <h3>Demonstration only</h3>
+          <p>
+            This is an AI-safety / interpretability demo. Modified neurons can produce hostile, deceptive and harmful
+            text, including graphic violence and sexual content. Nothing the model says is advice, instruction or fact,
+            and none of it reflects the views of this page's authors, the original demo's author, or the Qwen team. Do
+            not use or follow any of its output.
+          </p>
+
+          <h3>How it works</h3>
+          <p>
+            Each layer's MLP computes one activation per neuron, <code>a = silu(gate(x)) · up(x)</code>, and writes
+            <code>down_proj(a)</code> to the residual stream. The page edits those activations right before
+            <code>down_proj</code>: <code>a′ = a × scale + add</code>, per neuron. A dose follows lyra's recipe: dose 1
+            adds <code>median(‖resid‖ leaving layer L) / ‖W_down[:, n]‖</code>, a push as large as the typical residual
+            stream, in the direction that neuron writes to.
+          </p>
+          <p>
+            It runs onnx-community's 4-bit ONNX export of Qwen3.5-4B on
+            <a href="https://onnxruntime.ai/docs/tutorials/web/">onnxruntime-web</a>'s WebGPU backend in a worker. The
+            model graph is patched with a scale and an add input per layer (ones and zeros are exactly the original
+            model) and with per-neuron activation ranges for <em>Find neurons</em>. Weights stream from Hugging Face and
+            are cached in the browser; prompts, edits and traces never leave the machine.
+          </p>
+          <p class="muted">
+            Differences from the original demo: 4-bit weights instead of bf16, so token-for-token outputs differ; the
+            residual medians for layers other than 13 and 14 were measured on the 4-bit model.
+          </p>
+
+          <h3>Credits</h3>
+          <p>
+            The neurons, the dose recipe and the original finding are by lyra
+            (<a href="https://x.com/_lyraaaa_">@_lyraaaa_</a>), from
+            <a href="https://github.com/lyramakesmusic/neuron-explorer">neuron-explorer</a>. Ported from Shmuel Amar's
+            <a href="https://huggingface.co/spaces/shmuelamar/qwen-evil">qwen-dose</a> (Apache-2.0). The Toxic Positivity
+            preset comes from the <a href="https://poor-things.com/neurotype/168">Poor Things</a> catalog. Model:
+            <a href="https://huggingface.co/Qwen/Qwen3.5-4B">Qwen3.5-4B</a> by the Qwen team, ONNX export by
+            <a href="https://huggingface.co/onnx-community/Qwen3.5-4B-ONNX-OPT">onnx-community</a>.
+          </p>
+        </article>
+      </section>
+    </div>
+
+    <dialog id="settings" class="dialog">
+      <form method="dialog" class="dialog-body">
+        <header class="dialog-head">
+          <h2>Settings</h2>
+          <button class="ghost icon" value="close" aria-label="Close">✕</button>
+        </header>
+        <label class="field">
+          <span>Temperature <output id="temperature-value"></output></span>
+          <input id="temperature" type="range" min="0" max="1.5" step="0.05" />
+          <small class="muted">0 = greedy. Otherwise top-k 20, top-p 0.8, as in Qwen's defaults.</small>
+        </label>
+        <label class="field">
+          <span>Max new tokens <output id="max-tokens-value"></output></span>
+          <input id="max-tokens" type="range" min="16" max="2048" step="16" />
+        </label>
+        <label class="field">
+          <span>Compare strengths</span>
+          <input id="compare" class="mono" type="text" spellcheck="false" autocomplete="off" />
+          <small class="muted">One column per strength in Compare mode, modified ones first and the unmodified model
+            (0) last, e.g. <code>1, 0</code> or a sweep <code>0.5, 1, 1.5, 0</code>.</small>
+          <small id="compare-error" class="error-text" hidden></small>
+        </label>
+        <label class="check">
+          <input id="thinking" type="checkbox" />
+          <span>Thinking (Qwen's reasoning mode; shown above the answer)</span>
+        </label>
+        <div class="dialog-actions">
+          <button id="reset-settings" type="button" class="ghost">Reset to defaults</button>
+          <button id="clear-cache" type="button" class="ghost danger-text">Delete downloaded model</button>
+          <button value="close" class="primary">Done</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="neuron" class="dialog">
+      <div class="dialog-body">
+        <header class="dialog-head">
+          <h2 id="neuron-title"></h2>
+          <button id="neuron-close" class="ghost icon" aria-label="Close">✕</button>
+        </header>
+        <div id="neuron-body" class="neuron-body"></div>
+        <p class="muted small">
+          "Pushes up / down": the tokens whose logits this neuron's write direction raises or lowers most, read through
+          the final norm and the output layer. A direct-logit view: suggestive, rough for middle layers.
+        </p>
+        <div class="dialog-actions">
+          <button id="neuron-ablate" type="button" class="ghost">Ablate (×0)</button>
+          <button id="neuron-add" type="button" class="primary">Add a +1 dose</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

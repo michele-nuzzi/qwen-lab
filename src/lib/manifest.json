@@ -1,0 +1,3358 @@
+{
+ "_generated_by": "scripts/patch_graph.py",
+ "repo": "onnx-community/Qwen3.5-4B-ONNX-OPT",
+ "revision": "bb072268d0912bdc5cf4f41c8c6f53a03fd68624",
+ "hubFiles": {
+  "tokenizer.json": {
+   "path": "tokenizer.json",
+   "size": 19226111,
+   "sha256": "89da80cc6689bef4d90cc1028249436975ffb0814618f1d93c65310e05801a9b"
+  },
+  "tokenizer_config.json": {
+   "path": "tokenizer_config.json",
+   "size": 10070,
+   "sha256": null
+  }
+ },
+ "variants": {
+  "q4f16": {
+   "graph": "model/decoder_model_merged_q4f16.lab.onnx",
+   "stateType": "float16",
+   "activationType": "float16",
+   "externalData": {
+    "decoder_model_merged_q4f16.onnx_data": {
+     "path": "onnx/decoder_model_merged_q4f16.onnx_data",
+     "size": 2065635328,
+     "sha256": "83a2b12931978d2a3577f1f1a19e7ec42b87a760e87567dd26313fd933dcddd3"
+    },
+    "decoder_model_merged_q4f16.onnx_data_1": {
+     "path": "onnx/decoder_model_merged_q4f16.onnx_data_1",
+     "size": 367513600,
+     "sha256": "fc1bb145d8839272a87c71e0cb4d34832a0d7bb4de06ab4fb74fea1aa6ddf7e5"
+    }
+   },
+   "cache": [
+    {
+     "past": "past_conv.0",
+     "present": "present_conv.0",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.0",
+     "present": "present_recurrent.0",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.1",
+     "present": "present_conv.1",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.1",
+     "present": "present_recurrent.1",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.2",
+     "present": "present_conv.2",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.2",
+     "present": "present_recurrent.2",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.3.key",
+     "present": "present.3.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.3.value",
+     "present": "present.3.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.4",
+     "present": "present_conv.4",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.4",
+     "present": "present_recurrent.4",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.5",
+     "present": "present_conv.5",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.5",
+     "present": "present_recurrent.5",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.6",
+     "present": "present_conv.6",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.6",
+     "present": "present_recurrent.6",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.7.key",
+     "present": "present.7.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.7.value",
+     "present": "present.7.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.8",
+     "present": "present_conv.8",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.8",
+     "present": "present_recurrent.8",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.9",
+     "present": "present_conv.9",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.9",
+     "present": "present_recurrent.9",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.10",
+     "present": "present_conv.10",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.10",
+     "present": "present_recurrent.10",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.11.key",
+     "present": "present.11.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.11.value",
+     "present": "present.11.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.12",
+     "present": "present_conv.12",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.12",
+     "present": "present_recurrent.12",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.13",
+     "present": "present_conv.13",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.13",
+     "present": "present_recurrent.13",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.14",
+     "present": "present_conv.14",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.14",
+     "present": "present_recurrent.14",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.15.key",
+     "present": "present.15.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.15.value",
+     "present": "present.15.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.16",
+     "present": "present_conv.16",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.16",
+     "present": "present_recurrent.16",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.17",
+     "present": "present_conv.17",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.17",
+     "present": "present_recurrent.17",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.18",
+     "present": "present_conv.18",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.18",
+     "present": "present_recurrent.18",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.19.key",
+     "present": "present.19.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.19.value",
+     "present": "present.19.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.20",
+     "present": "present_conv.20",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.20",
+     "present": "present_recurrent.20",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.21",
+     "present": "present_conv.21",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.21",
+     "present": "present_recurrent.21",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.22",
+     "present": "present_conv.22",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.22",
+     "present": "present_recurrent.22",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.23.key",
+     "present": "present.23.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.23.value",
+     "present": "present.23.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.24",
+     "present": "present_conv.24",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.24",
+     "present": "present_recurrent.24",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.25",
+     "present": "present_conv.25",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.25",
+     "present": "present_recurrent.25",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.26",
+     "present": "present_conv.26",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.26",
+     "present": "present_recurrent.26",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.27.key",
+     "present": "present.27.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.27.value",
+     "present": "present.27.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.28",
+     "present": "present_conv.28",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.28",
+     "present": "present_recurrent.28",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.29",
+     "present": "present_conv.29",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.29",
+     "present": "present_recurrent.29",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.30",
+     "present": "present_conv.30",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.30",
+     "present": "present_recurrent.30",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.31.key",
+     "present": "present.31.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.31.value",
+     "present": "present.31.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    }
+   ],
+   "tensors": {
+    "model.layers.32.final_norm_layernorm.weight": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2244608,
+     "length": 10240,
+     "dims": [
+      2560
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 53877248,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 65673728,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 67148288,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 119139328,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 130935808,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 132410368,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 184401408,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 196197888,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 197672448,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 246537728,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 258334208,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 259808768,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 311799808,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 323596288,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 325070848,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 377061888,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 388858368,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 390332928,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 442323968,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 454120448,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 455595008,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 504460288,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 516256768,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 517731328,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 569722368,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 581518848,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 582993408,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 634984448,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 646780928,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 648255488,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 700246528,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 712043008,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 713517568,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 762382848,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 774179328,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 775653888,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 827644928,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 839441408,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 840915968,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 892907008,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 904703488,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 906178048,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 958169088,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 969965568,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 971440128,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1020305408,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1032101888,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1033576448,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1085567488,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1097363968,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1098838528,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1150829568,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1162626048,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1164100608,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1216091648,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1227888128,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1229362688,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1278227968,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1290024448,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1291499008,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1343490048,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1355286528,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1356761088,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1408752128,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1420548608,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1422023168,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1474014208,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1485810688,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1487285248,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1536150528,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1547947008,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1549421568,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1601412608,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1613209088,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1614683648,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1666674688,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1678471168,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1679945728,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1731936768,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1743733248,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1745207808,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1794073088,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1805869568,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1807344128,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1859335168,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1871131648,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1872606208,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1924597248,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1936393728,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1937868288,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 1989859328,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2001655808,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2003130368,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2051995648,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2063792128,
+     "length": 1474560,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float16"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data",
+     "offset": 2065266688,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "lm_head_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4f16.onnx_data_1",
+     "offset": 0,
+     "length": 317849600,
+     "dims": [
+      248320,
+      80,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "lm_head_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4f16.onnx_data_1",
+     "offset": 317849600,
+     "length": 39731200,
+     "dims": [
+      248320,
+      80
+     ],
+     "dtype": "float16"
+    },
+    "lm_head_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4f16.onnx_data_1",
+     "offset": 357580800,
+     "length": 9932800,
+     "dims": [
+      248320,
+      40
+     ],
+     "dtype": "uint8"
+    }
+   }
+  },
+  "q4": {
+   "graph": "model/decoder_model_merged_q4.lab.onnx",
+   "stateType": "float32",
+   "activationType": "float32",
+   "externalData": {
+    "decoder_model_merged_q4.onnx_data": {
+     "path": "onnx/decoder_model_merged_q4.onnx_data",
+     "size": 2097044992,
+     "sha256": "20fbde97e852348e0624f6b531719389330579125fcc1e8ec060ce95be3d3f80"
+    },
+    "decoder_model_merged_q4.onnx_data_1": {
+     "path": "onnx/decoder_model_merged_q4.onnx_data_1",
+     "size": 600476160,
+     "sha256": "2000ad9f365376b2d4d8cf1af47ca11989519d2f42a3f738b09e766d483ae623"
+    }
+   },
+   "cache": [
+    {
+     "past": "past_conv.0",
+     "present": "present_conv.0",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.0",
+     "present": "present_recurrent.0",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.1",
+     "present": "present_conv.1",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.1",
+     "present": "present_recurrent.1",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.2",
+     "present": "present_conv.2",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.2",
+     "present": "present_recurrent.2",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.3.key",
+     "present": "present.3.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.3.value",
+     "present": "present.3.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.4",
+     "present": "present_conv.4",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.4",
+     "present": "present_recurrent.4",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.5",
+     "present": "present_conv.5",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.5",
+     "present": "present_recurrent.5",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.6",
+     "present": "present_conv.6",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.6",
+     "present": "present_recurrent.6",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.7.key",
+     "present": "present.7.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.7.value",
+     "present": "present.7.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.8",
+     "present": "present_conv.8",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.8",
+     "present": "present_recurrent.8",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.9",
+     "present": "present_conv.9",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.9",
+     "present": "present_recurrent.9",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.10",
+     "present": "present_conv.10",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.10",
+     "present": "present_recurrent.10",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.11.key",
+     "present": "present.11.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.11.value",
+     "present": "present.11.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.12",
+     "present": "present_conv.12",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.12",
+     "present": "present_recurrent.12",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.13",
+     "present": "present_conv.13",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.13",
+     "present": "present_recurrent.13",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.14",
+     "present": "present_conv.14",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.14",
+     "present": "present_recurrent.14",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.15.key",
+     "present": "present.15.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.15.value",
+     "present": "present.15.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.16",
+     "present": "present_conv.16",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.16",
+     "present": "present_recurrent.16",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.17",
+     "present": "present_conv.17",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.17",
+     "present": "present_recurrent.17",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.18",
+     "present": "present_conv.18",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.18",
+     "present": "present_recurrent.18",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.19.key",
+     "present": "present.19.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.19.value",
+     "present": "present.19.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.20",
+     "present": "present_conv.20",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.20",
+     "present": "present_recurrent.20",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.21",
+     "present": "present_conv.21",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.21",
+     "present": "present_recurrent.21",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.22",
+     "present": "present_conv.22",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.22",
+     "present": "present_recurrent.22",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.23.key",
+     "present": "present.23.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.23.value",
+     "present": "present.23.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.24",
+     "present": "present_conv.24",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.24",
+     "present": "present_recurrent.24",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.25",
+     "present": "present_conv.25",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.25",
+     "present": "present_recurrent.25",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.26",
+     "present": "present_conv.26",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.26",
+     "present": "present_recurrent.26",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.27.key",
+     "present": "present.27.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.27.value",
+     "present": "present.27.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_conv.28",
+     "present": "present_conv.28",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.28",
+     "present": "present_recurrent.28",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.29",
+     "present": "present_conv.29",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.29",
+     "present": "present_recurrent.29",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_conv.30",
+     "present": "present_conv.30",
+     "dims": [
+      1,
+      8192,
+      3
+     ]
+    },
+    {
+     "past": "past_recurrent.30",
+     "present": "present_recurrent.30",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ]
+    },
+    {
+     "past": "past_key_values.31.key",
+     "present": "present.31.key",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    },
+    {
+     "past": "past_key_values.31.value",
+     "present": "present.31.value",
+     "dims": [
+      1,
+      4,
+      0,
+      256
+     ]
+    }
+   ],
+   "tensors": {
+    "model.layers.32.final_norm_layernorm.weight": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 3817472,
+     "length": 10240,
+     "dims": [
+      2560
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 61030912,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 72827392,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_0_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 75776512,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 133348352,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 145144832,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_1_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 148093952,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 205665792,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 217462272,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_2_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 220411392,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 274519552,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 286316032,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_3_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 289265152,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 346836992,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 358633472,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_4_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 361582592,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 419154432,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 430950912,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_5_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 433900032,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 491471872,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 503268352,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_6_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 506217472,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 560325632,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 572122112,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_7_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 575071232,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 632643072,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 644439552,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_8_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 647388672,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 704960512,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 716756992,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_9_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 719706112,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 777277952,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 789074432,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_10_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 792023552,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 846131712,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 857928192,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_11_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 860877312,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 918449152,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 930245632,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_12_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 933194752,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 990766592,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1002563072,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_13_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1005512192,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1063084032,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1074880512,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_14_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1077829632,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1131937792,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1143734272,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_15_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1146683392,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1204255232,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1216051712,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_16_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1219000832,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1276572672,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1288369152,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_17_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1291318272,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1348890112,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1360686592,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_18_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1363635712,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1417743872,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1429540352,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_19_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1432489472,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1490061312,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1501857792,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_20_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1504806912,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1562378752,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1574175232,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_21_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1577124352,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1634696192,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1646492672,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_22_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1649441792,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1703549952,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1715346432,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_23_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1718295552,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1775867392,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1787663872,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_24_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1790612992,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1848184832,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1859981312,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_25_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1862930432,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1920502272,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1932298752,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_26_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1935247872,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 1989356032,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 2001152512,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_27_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 2004101632,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 2061673472,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 2073469952,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_28_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data",
+     "offset": 2076419072,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 36945920,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 48742400,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_29_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 51691520,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 109263360,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 121059840,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_30_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 124008960,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 178117120,
+     "length": 11796480,
+     "dims": [
+      2560,
+      288,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 189913600,
+     "length": 2949120,
+     "dims": [
+      2560,
+      288
+     ],
+     "dtype": "float32"
+    },
+    "model_layers_31_mlp_down_proj_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 192862720,
+     "length": 368640,
+     "dims": [
+      2560,
+      144
+     ],
+     "dtype": "uint8"
+    },
+    "lm_head_MatMul_weight_quant": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 193231360,
+     "length": 317849600,
+     "dims": [
+      248320,
+      80,
+      16
+     ],
+     "dtype": "uint8"
+    },
+    "lm_head_MatMul_weight_scales": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 511080960,
+     "length": 79462400,
+     "dims": [
+      248320,
+      80
+     ],
+     "dtype": "float32"
+    },
+    "lm_head_MatMul_weight_zp": {
+     "file": "decoder_model_merged_q4.onnx_data_1",
+     "offset": 590543360,
+     "length": 9932800,
+     "dims": [
+      248320,
+      40
+     ],
+     "dtype": "uint8"
+    }
+   }
+  }
+ },
+ "numLayers": 32
+}

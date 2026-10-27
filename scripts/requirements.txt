@@ -1,0 +1,7 @@
+# Offline tooling only (the website itself has no Python). See scripts/*.py docstrings.
+onnx>=1.20
+onnxruntime>=1.31
+numpy
+tokenizers
+huggingface_hub
+jinja2
